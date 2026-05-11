@@ -1,78 +1,49 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+import Layout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 ---
 
-<BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+<Layout>
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-bold">Akshyat Ankur Patel</h1>
+    <p class="text-xl text-gray-400 mt-2">AI Engineer & Data Scientist</p>
+
+    <div class="mt-6 space-y-4 text-gray-300">
+      <p>
+        I build end‑to‑end AI products – from data cleaning, feature engineering, and model tuning to deployment and LLM integration. 
+        With 2+ years of backend engineering experience at <strong class="text-white">RedBus (GO-MMT Group)</strong>, I combine software craftsmanship with machine learning to deliver scalable, fault‑tolerant systems.
+      </p>
+      <p>
+        Currently pursuing an MSc in Data Science and AI at <strong class="text-white">Middlesex University Dubai</strong>, I'm passionate about using generative AI, predictive modelling, and agentic workflows to solve real business problems.
+      </p>
+      <p>
+        My recent work includes a live property price predictor for the UAE market (R² 0.73, deployed), a customer churn system (AUC 0.84) with AI‑generated retention advice, and an industrial energy simulator (R² > 0.96) used internally by a major Abu Dhabi mall.
+      </p>
+      <p>
+        I'm actively looking for AI Engineer, Data Scientist, or ML Engineer roles in Dubai or Europe. Let's connect.
+      </p>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+
+    <h2 class="text-2xl font-bold mt-12 mb-4">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <Card
+        title="UAE Real Estate AI Analyzer"
+        description="CatBoost price predictor (R²=0.73, RMSE=2.46M AED) with LLM explanation via Groq Llama 3.3"
+        github="https://github.com/akshyat21/UAE-RealEstate-AI"
+        demo="https://uae-realestate-ai-kjmsf4tshdkmtvlnzkgqx7.streamlit.app/"
+      />
+      <Card
+        title="Customer Churn Prediction"
+        description="Logistic regression (AUC=0.84) with AI-powered retention advice"
+        github="https://github.com/akshyat21/AI-Churn-Prediction"
+        demo="https://ai-churn-prediction-hpudyompmu5v7jnxk4epso.streamlit.app/"
+      />
+      <Card
+        title="AI‑Powered Energy Simulator (Internship)"
+        description="Ridge regression (R²>0.96) for Dalma Mall – used internally by engineering team"
+        github="#"
+        demo="#"
+      />
     </div>
   </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-</BaseLayout>
+</Layout>

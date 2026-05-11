@@ -1,41 +1,90 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import SideBar from "../components/SideBar.astro";
-import { ViewTransitions } from "astro:transitions";
-
-import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
-
-const {
-  image,
-  title = SITE_TITLE,
-  description = SITE_DESCRIPTION,
-  includeSidebar = true,
-  sideBarActiveItemID,
-  ogType,
-} = Astro.props;
+import { SOCIALS, SITE } from "../config";
 ---
 
-<!doctype html>
-<html lang="en" data-theme="lofi">
-  <head>
-    <BaseHead title={title} description={description} image={image} , ogType={ogType} />
-    {TRANSITION_API && <ViewTransitions />}
-  </head>
-  <body>
-    <div class="bg-base-100 drawer lg:drawer-open">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content bg-base-100">
-        <Header title={SITE_TITLE} />
-        <div class="md:flex md:justify-center">
-          <main class="p-6 pt-10 lg:max-w-[900px] max-w-[100vw]">
-            <slot />
-          </main>
-        </div>
-        <Footer />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{SITE.title} | {SITE.description}</title>
+  <link rel="stylesheet" href="/styles/global.css">
+  <style>
+    /* Simple black/white theme */
+    body {
+      background-color: #000;
+      color: #eee;
+    }
+    a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: white;
+    }
+    .sidebar {
+      background-color: #111;
+      border-right: 1px solid #222;
+    }
+    .card {
+      background-color: #111;
+      border: 1px solid #222;
+    }
+    .btn-github {
+      background-color: #222;
+      color: #eee;
+    }
+    .btn-github:hover {
+      background-color: #333;
+    }
+    .btn-demo {
+      background-color: #eee;
+      color: #000;
+    }
+    .btn-demo:hover {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body class="flex min-h-screen">
+  <!-- Sidebar -->
+  <aside class="sidebar w-64 fixed top-0 left-0 h-full p-6 flex flex-col justify-between">
+    <div>
+      <div class="text-center mb-8">
+        <img src="/profile.jpeg" alt="Akshyat Ankur Patel" class="w-24 h-24 rounded-full mx-auto object-cover object-top border-2 border-gray-700">
+        <h2 class="text-xl font-bold mt-3">Akshyat Ankur Patel</h2>
+        <p class="text-sm text-gray-400">AI Engineer & Data Scientist</p>
       </div>
-      {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
+      <!-- Navigation with icons (using simple text icons for brevity; you can replace with lucide or emoji) -->
+      <nav class="flex flex-col gap-4">
+        <a href="/" class="flex items-center gap-3 text-gray-300 hover:text-white">
+          <span class="text-lg">🏠</span> <span>Home</span>
+        </a>
+        <a href="/cv" class="flex items-center gap-3 text-gray-300 hover:text-white">
+          <span class="text-lg">📄</span> <span>CV</span>
+        </a>
+      </nav>
+      <div class="mt-8 border-t border-gray-800 pt-4">
+        <h3 class="text-sm uppercase tracking-wider text-gray-500 mb-2">Connect</h3>
+        <div class="flex gap-4">
+          {SOCIALS.map((social) => (
+            <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition">
+              <span class="text-lg">{social.name === "GitHub" ? "🐙" : social.name === "LinkedIn" ? "🔗" : social.name === "Instagram" ? "📷" : "✉️"}</span>
+              <span class="sr-only">{social.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
-  </body>
+    <div class="text-center text-xs text-gray-600">
+      © {new Date().getFullYear()} Akshyat Patel
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="ml-64 flex-1 p-8">
+    <slot />
+  </main>
+</body>
 </html>
