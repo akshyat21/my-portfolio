@@ -1,54 +1,991 @@
 ---
-import Layout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
+// src/pages/index.astro
+// Self-contained single-page portfolio — no sidebar, mobile-first
 ---
 
-<Layout>
-  <div class="max-w-3xl">
-    <h1 class="text-4xl font-bold">Akshyat Ankur Patel</h1>
-    <p class="text-xl text-gray-400 mt-2">Data Scientist & AI Engineer</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshyat Ankur Patel — AI Engineer & Data Scientist</title>
+  <meta name="description" content="Data Scientist & AI Engineer — Dubai, UAE. Building production ML systems, LLM pipelines, and scalable backends." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
 
-    <div class="mt-6 space-y-4 text-gray-300">
-      <p>
-        Data Scientist & AI Engineer with 2+ years of backend development experience at RedBus (GO-MMT Group), specialising in machine learning, predictive modeling, and high‑scale system optimisation. Proven ability to build production AI systems (R² > 0.96 for industrial energy simulation) and communicate technical value to non‑technical stakeholders.
-      </p>
-      <p>
-        Proficient in Python, Erlang, SQL, LLMs, and cloud deployment. Currently pursuing an MSc in Data Science and AI at Middlesex University Dubai. Passionate about building fault‑tolerant, data‑driven solutions that drive business growth.
-      </p>
-    </div>
+<body>
 
-    <h2 class="text-2xl font-bold mt-12 mb-4">Featured Projects</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <Card
-        title="UAE Real Estate AI Analyzer"
-        description="CatBoost price predictor (R²=0.73, RMSE=2.46M AED) with LLM explanation via Groq Llama 3.3"
-        github="https://github.com/akshyat21/UAE-RealEstate-AI"
-        demo="https://uae-realestate-ai-kjmsf4tshdkmtvlnzkgqx7.streamlit.app/"
-      />
-      <Card
-        title="Customer Churn Prediction"
-        description="Logistic regression (AUC=0.84) with AI-powered retention advice"
-        github="https://github.com/akshyat21/AI-Churn-Prediction"
-        demo="https://ai-churn-prediction-hpudyompmu5v7jnxk4epso.streamlit.app/"
-      />
-      <Card
-        title="Medical RAG Prototype"
-        description="Local RAG system using sentence‑transformers + Groq Llama 3.3. Retrieval on‑premise, swappable with MedGemma + NVIDIA GPU."
-        github="https://github.com/akshyat21/medical-rag-prototype"
-        demo="#"
-      />
-      <Card
-        title="AI‑Powered Energy Simulator (Internship)"
-        description="Ridge regression (R²>0.96) for Dalma Mall – used internally by engineering team"
-        github="#"
-        demo="#"
-      />
-      <Card
-        title="Multilingual AI Voice Agent"
-        description="Speech‑to‑speech AI assistant with 5 languages – Whisper transcription + Llama 3.3 + gTTS"
-        github="https://github.com/akshyat21/AI-Voice-Agent-Model"
-        demo="https://ai-voice-agent-model-ncpmffbwma268xk6qr5gtb.streamlit.app/"
-      />
+  <!-- ░░ AMBIENT ░░ -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <!-- ░░ NAV ░░ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">AP</a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#connect" class="nav-cta">Connect</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ░░ HERO ░░ -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-layout">
+
+        <div class="hero-photo-wrap" aria-hidden="true">
+          <div class="hero-ring"></div>
+          <img
+            src="/profile.jpeg"
+            alt="Akshyat Ankur Patel"
+            class="hero-photo"
+            width="180"
+            height="180"
+          />
+        </div>
+
+        <div class="hero-text">
+          <span class="badge">
+            <span class="badge-dot"></span>
+            Available for opportunities
+          </span>
+
+          <h1>Akshyat<br /><span>Ankur Patel</span></h1>
+
+          <p class="hero-sub">
+            Data Scientist &amp; AI Engineer building production-grade ML systems,
+            LLM pipelines, and scalable backend solutions.
+          </p>
+
+          <ul class="hero-meta" role="list">
+            <li>📍 Dubai, UAE</li>
+            <li>🎓 MSc Data Science &amp; AI — Middlesex University</li>
+            <li>💼 2+ yrs backend @ RedBus (GO-MMT)</li>
+          </ul>
+
+          <div class="hero-ctas">
+            <a href="#connect" class="btn-primary">Get in touch →</a>
+            <a href="#projects" class="btn-outline">View projects</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</Layout>
+  </section>
+
+  <!-- ░░ EXPERIENCE ░░ -->
+  <section id="experience" class="sec-light">
+    <div class="container">
+      <p class="sec-label reveal">Career</p>
+      <h2 class="reveal">Experience</h2>
+
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-date">Feb 2026 – Apr 2026</div>
+          <div class="tl-body">
+            <p class="tl-role">Data Scientist &amp; AI Engineer</p>
+            <p class="tl-company">Dalma Mall · Abu Dhabi &nbsp;— Internship</p>
+            <ul class="tl-bullets">
+              <li>Built Ridge regression model (accuracy &gt;95%) for daily power &amp; cooling load forecasting using atmospheric enthalpy — replaced naive lag predictors.</li>
+              <li>Deployed interactive what-if dashboard via Open-Meteo API; adopted by the engineering team for proactive HVAC planning, reducing operational costs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-date">Aug 2023 – Aug 2025</div>
+          <div class="tl-body">
+            <p class="tl-role">Software Engineer — Erlang Backend</p>
+            <p class="tl-company">RedBus (GO-MMT Group) · Bengaluru</p>
+            <ul class="tl-bullets">
+              <li>Built and maintained concurrent, fault-tolerant backend systems with Erlang/OTP; designed RESTful APIs and background workers at production scale.</li>
+              <li>Integrated data pipelines across ClickHouse, MySQL &amp; MariaDB; engineered Grafana dashboards for real-time KPI visibility.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PROJECTS ░░ -->
+  <section id="projects" class="sec-dark">
+    <div class="container">
+      <p class="sec-label reveal">Work</p>
+      <h2 class="reveal">Projects</h2>
+
+      <div class="project-grid">
+
+        <article class="project-card reveal">
+          <div class="card-icon">🏙️</div>
+          <h3>UAE Real Estate AI Analyzer</h3>
+          <p>CatBoost price predictor (R²=0.73, RMSE=2.46M AED) with LLM-powered market explanations via Groq Llama 3.3.</p>
+          <div class="tags">
+            <span>CatBoost</span><span>LangChain</span><span>Groq</span><span>Optuna</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/akshyat21/UAE-RealEstate-AI" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://uae-realestate-ai-kjmsf4tshdkmtvlnzkgqx7.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="card-icon">📊</div>
+          <h3>Customer Churn Prediction</h3>
+          <p>Logistic regression (AUC=0.84) with AI-generated retention advice tailored to at-risk customer profiles.</p>
+          <div class="tags">
+            <span>scikit-learn</span><span>LangChain</span><span>Streamlit</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/akshyat21/AI-Churn-Prediction" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://ai-churn-prediction-hpudyompmu5v7jnxk4epso.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="card-icon">🏥</div>
+          <h3>Medical RAG Prototype</h3>
+          <p>On-premise RAG with sentence-transformers + Groq Llama 3.3. Local retrieval; swappable with MedGemma + NVIDIA GPU.</p>
+          <div class="tags">
+            <span>RAG</span><span>sentence-transformers</span><span>LangChain</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/akshyat21/medical-rag-prototype" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="card-icon">🎙️</div>
+          <h3>Multilingual AI Voice Agent</h3>
+          <p>Speech-to-speech assistant in 5 languages — Whisper transcription, Llama 3.3 reasoning, gTTS voice output.</p>
+          <div class="tags">
+            <span>Whisper</span><span>Llama 3.3</span><span>gTTS</span><span>Groq</span>
+          </div>
+          <div class="card-links">
+            <a href="https://github.com/akshyat21/AI-Voice-Agent-Model" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://ai-voice-agent-model-ncpmffbwma268xk6qr5gtb.streamlit.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="card-icon">⚡</div>
+          <h3>AI Energy Simulator</h3>
+          <p>Ridge regression (R²&gt;0.96) forecasting power &amp; cooling load for Dalma Mall — deployed and used daily by engineering team.</p>
+          <div class="tags">
+            <span>Ridge Regression</span><span>Open-Meteo API</span><span>Streamlit</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ SKILLS ░░ -->
+  <section id="skills" class="sec-light">
+    <div class="container">
+      <p class="sec-label reveal">Toolkit</p>
+      <h2 class="reveal">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <p class="skill-title">Languages</p>
+          <div class="pills">
+            <span>Python</span><span>SQL</span><span>Erlang</span><span>C++</span><span>R</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <p class="skill-title">AI / ML</p>
+          <div class="pills">
+            <span>LLMs</span><span>GenAI</span><span>TensorFlow</span><span>PyTorch</span><span>NLP</span><span>RAG</span><span>Agentic AI</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <p class="skill-title">Frameworks</p>
+          <div class="pills">
+            <span>LangChain</span><span>Scikit-learn</span><span>Pandas</span><span>Streamlit</span><span>Groq API</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <p class="skill-title">Data &amp; Cloud</p>
+          <div class="pills">
+            <span>ClickHouse</span><span>MySQL</span><span>Grafana</span><span>Git / CI-CD</span><span>Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ EDUCATION ░░ -->
+  <section id="education" class="sec-dark">
+    <div class="container">
+      <p class="sec-label reveal">Academic</p>
+      <h2 class="reveal">Education</h2>
+
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-date">Jan 2026 – Present</div>
+          <div class="tl-body">
+            <p class="tl-role">MSc in Data Science and AI</p>
+            <p class="tl-company">Middlesex University Dubai</p>
+            <p class="tl-note">Applied Data Science · Generative AI &amp; LLMs · Machine Learning · Data Engineering · Predictive Modeling</p>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-date">Aug 2019 – Jul 2023</div>
+          <div class="tl-body">
+            <p class="tl-role">B.Tech in Mechanical Engineering</p>
+            <p class="tl-company">National Institute of Technology (NIT) Rourkela</p>
+            <p class="tl-note">GPA: 8.45 / 10</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CERTIFICATIONS ░░ -->
+  <section id="certifications" class="sec-light">
+    <div class="container">
+      <p class="sec-label reveal">Credentials</p>
+      <h2 class="reveal">Certifications</h2>
+
+      <div class="cert-grid">
+
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/F8MEQZM5J811"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">IBM Data Science Professional Certificate</span>
+            <span class="cert-issuer">Coursera</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/verify/LJL95LRVVP85"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">Python for Data Science, AI and Development</span>
+            <span class="cert-issuer">Coursera</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/verify/2UY58R827A2J"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">Machine Learning with Python</span>
+            <span class="cert-issuer">Coursera</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+        <a href="https://certificate.codingninjas.com/view/51c0217441514f88"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">Advanced Front-End with React (Full Stack)</span>
+            <span class="cert-issuer">Coding Ninjas</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+        <a href="https://certificate.codingninjas.com/view/1e4c90cc8d4aa8ef"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">Back-End / Full Stack with Node.js</span>
+            <span class="cert-issuer">Coding Ninjas</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+        <a href="https://certificate.codingninjas.com/view/9473746e21813170"
+           class="cert-card reveal" target="_blank" rel="noopener noreferrer">
+          <span class="cert-dot"></span>
+          <span class="cert-text">
+            <span class="cert-name">Data Structures in C++ (Excellence)</span>
+            <span class="cert-issuer">Coding Ninjas</span>
+          </span>
+          <span class="cert-arrow">↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ CONNECT ░░ -->
+  <section id="connect" class="sec-dark">
+    <div class="container">
+      <div class="connect-inner">
+        <p class="sec-label reveal" style="text-align:center">Let's talk</p>
+        <h2 class="reveal" style="text-align:center">Connect</h2>
+        <p class="connect-sub reveal">
+          Open to AI/ML roles, data science projects, and collaborations.<br />
+          Based in Dubai — happy to chat remotely or in person.
+        </p>
+
+        <div class="social-row reveal">
+          <a href="https://github.com/akshyat21" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/akshyat-ankur-patel-79993a215/" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="mailto:akshyat2001@gmail.com" class="social-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://akshyat-ai.vercel.app" class="social-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            Portfolio
+          </a>
+        </div>
+
+        <div class="phone-row reveal">
+          <span>📞 <a href="tel:+971507928403">+971 507928403</a> <em>UAE</em></span>
+          <span>📞 <a href="tel:+918598031611">+91 8598031611</a> <em>India</em></span>
+        </div>
+
+        <div style="text-align:center; margin-top:1.5rem;">
+          <a href="mailto:akshyat2001@gmail.com" class="btn-primary reveal">
+            📩 &nbsp;Send a message
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© {new Date().getFullYear()} Akshyat Ankur Patel · Dubai, UAE</p>
+  </footer>
+
+</body>
+</html>
+
+<style>
+  /* ── RESET & TOKENS ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:           #07070f;
+    --bg-alt:       #0e0e1c;
+    --purple:       #a78bfa;
+    --purple-hi:    #c4b5fd;
+    --purple-dk:    #6d28d9;
+    --glow:         rgba(167,139,250,.15);
+    --border:       rgba(167,139,250,.2);
+    --text:         #e8e6f0;
+    --muted:        #9490a8;
+    --card:         rgba(255,255,255,.03);
+    --radius:       12px;
+  }
+
+  html  { scroll-behavior: smooth; }
+
+  body  {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: .3;
+  }
+
+  /* ── ORBS ── */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: .1;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .orb-1 { width: 600px; height: 600px; background: var(--purple-dk); top: -200px; right: -150px; }
+  .orb-2 { width: 400px; height: 400px; background: #4f46e5; bottom: 20%; left: -100px; }
+
+  /* ── NAV ── */
+  #navbar {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .95rem 2.5rem;
+    background: rgba(7,7,15,.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--purple-hi);
+    text-decoration: none;
+    letter-spacing: -.3px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.7rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 400;
+    letter-spacing: .03em;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--purple-hi); }
+
+  .nav-cta {
+    background: var(--purple) !important;
+    color: #07070f !important;
+    padding: .38rem .95rem;
+    border-radius: 30px;
+    font-weight: 500 !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--purple-hi) !important; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span { width: 22px; height: 2px; background: var(--purple-hi); border-radius: 2px; display: block; transition: all .3s; }
+
+  /* ── SECTIONS ── */
+  section { position: relative; z-index: 1; }
+  .sec-dark  { background: var(--bg); }
+  .sec-light { background: var(--bg-alt); }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .sec-label {
+    font-size: .72rem;
+    letter-spacing: .16em;
+    color: var(--purple);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: .45rem;
+    display: block;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    font-weight: 800;
+    letter-spacing: -.6px;
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 7rem 0 4rem;
+  }
+
+  .hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    width: 100%;
+    animation: fadeUp .75s ease both;
+  }
+
+  /* Photo */
+  .hero-photo-wrap {
+    flex-shrink: 0;
+    position: relative;
+    width: 180px;
+    height: 180px;
+  }
+  .hero-ring {
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 1px dashed var(--border);
+    animation: spin 18s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hero-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    border: 2px solid var(--border);
+    box-shadow: 0 0 40px rgba(167,139,250,.2), 0 0 0 6px rgba(167,139,250,.07);
+    display: block;
+  }
+
+  /* Text */
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    flex: 1;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .78rem;
+    color: var(--purple);
+    border: 1px solid var(--border);
+    padding: .27rem .85rem;
+    border-radius: 30px;
+    width: fit-content;
+    background: var(--glow);
+  }
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--purple);
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.07;
+    letter-spacing: -1.5px;
+    color: #fff;
+  }
+  h1 span { color: var(--purple); }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 500px;
+    line-height: 1.75;
+  }
+
+  .hero-meta {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    font-size: .82rem;
+    color: var(--muted);
+  }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: .7rem; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .65rem 1.5rem;
+    background: var(--purple);
+    color: #07070f;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--purple-hi); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .65rem 1.5rem;
+    border: 1px solid var(--border);
+    color: var(--purple-hi);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: .9rem;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background .2s, transform .15s;
+  }
+  .btn-outline:hover { background: var(--glow); transform: translateY(-2px); }
+
+  /* ── TIMELINE (Experience + Education) ── */
+  #experience, #education { padding: 5rem 0; }
+
+  .timeline { display: flex; flex-direction: column; }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    gap: 1.5rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  .tl-item:last-child { border-bottom: none; }
+
+  .tl-date { font-size: .76rem; color: var(--muted); padding-top: .1rem; line-height: 1.5; }
+
+  .tl-role {
+    font-family: 'Syne', sans-serif;
+    font-size: .98rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: .12rem;
+  }
+  .tl-company { font-size: .82rem; color: var(--purple); margin-bottom: .55rem; }
+  .tl-note    { font-size: .82rem; color: var(--muted); }
+
+  .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: .28rem; }
+  .tl-bullets li {
+    font-size: .86rem;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+  .tl-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--purple);
+    font-size: .68rem;
+    top: .18rem;
+  }
+
+  /* ── PROJECTS ── */
+  #projects { padding: 5rem 0; }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    transition: border-color .25s, transform .2s, background .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--glow) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .project-card:hover { border-color: var(--purple); transform: translateY(-4px); background: rgba(167,139,250,.05); }
+  .project-card:hover::before { opacity: 1; }
+
+  .card-icon { font-size: 1.35rem; margin-bottom: .8rem; }
+
+  .project-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: .3rem;
+  }
+
+  .project-card p {
+    font-size: .82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: .85rem;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: .3rem; margin-bottom: .85rem; }
+  .tags span {
+    font-size: .69rem;
+    padding: .17rem .52rem;
+    border-radius: 30px;
+    background: var(--glow);
+    color: var(--purple-hi);
+    border: 1px solid var(--border);
+  }
+
+  .card-links { display: flex; gap: .5rem; }
+  .card-links a {
+    font-size: .76rem;
+    color: var(--purple);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: .2rem .62rem;
+    border-radius: 20px;
+    transition: background .2s, color .2s;
+  }
+  .card-links a:hover { background: var(--purple); color: #07070f; }
+
+  /* ── SKILLS ── */
+  #skills { padding: 5rem 0; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.25rem;
+  }
+  .skill-title {
+    font-family: 'Syne', sans-serif;
+    font-size: .73rem;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    margin-bottom: .7rem;
+  }
+  .pills { display: flex; flex-wrap: wrap; gap: .28rem; }
+  .pills span {
+    font-size: .76rem;
+    color: var(--text);
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    padding: .17rem .52rem;
+    border-radius: 20px;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { padding: 5rem 0; }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: .75rem;
+  }
+
+  .cert-card {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .95rem 1.15rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: border-color .2s, background .2s, transform .15s;
+    color: inherit;
+  }
+  .cert-card:hover {
+    border-color: var(--purple);
+    background: rgba(167,139,250,.06);
+    transform: translateY(-2px);
+  }
+
+  .cert-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--purple);
+    flex-shrink: 0;
+  }
+  .cert-text { display: flex; flex-direction: column; flex: 1; }
+  .cert-name   { font-size: .86rem; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .cert-issuer { font-size: .74rem; color: var(--muted); margin-top: .1rem; }
+  .cert-arrow  { color: var(--purple); font-size: .8rem; opacity: .6; flex-shrink: 0; }
+
+  /* ── CONNECT ── */
+  #connect { padding: 5rem 0 6rem; }
+
+  .connect-inner { max-width: 540px; margin: 0 auto; text-align: center; }
+  .connect-inner h2 { margin-bottom: .65rem; }
+
+  .connect-sub {
+    color: var(--muted);
+    font-size: .95rem;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .social-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .52rem 1.05rem;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: .84rem;
+    background: var(--card);
+    transition: border-color .2s, background .2s, color .2s, transform .15s;
+  }
+  .social-btn:hover {
+    border-color: var(--purple);
+    background: var(--glow);
+    color: var(--purple-hi);
+    transform: translateY(-2px);
+  }
+
+  .phone-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: .83rem;
+    color: var(--muted);
+    margin-bottom: .5rem;
+  }
+  .phone-row a { color: var(--purple-hi); text-decoration: none; }
+  .phone-row a:hover { text-decoration: underline; }
+  .phone-row em { font-style: normal; font-size: .74rem; color: var(--muted); margin-left: .25rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 1.35rem;
+    font-size: .74rem;
+    color: var(--muted);
+    border-top: 1px solid rgba(255,255,255,.05);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    #navbar { padding: .85rem 1.1rem; }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: rgba(7,7,15,.97);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.4rem;
+      gap: 1rem;
+    }
+    .nav-links.open { display: flex; }
+    .hamburger      { display: flex; }
+
+    .hero-layout { flex-direction: column; align-items: flex-start; gap: 1.8rem; }
+    .hero-photo-wrap, .hero-photo { width: 130px; height: 130px; }
+
+    .tl-item       { grid-template-columns: 1fr; gap: .2rem; }
+    .project-grid  { grid-template-columns: 1fr; }
+    .skills-grid   { grid-template-columns: 1fr 1fr; }
+    .cert-grid     { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 420px) {
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // Hamburger
+  const ham  = document.getElementById('hamburger') as HTMLButtonElement;
+  const menu = document.getElementById('navLinks')  as HTMLUListElement;
+
+  ham.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    ham.setAttribute('aria-expanded', String(open));
+  });
+  menu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  // Scroll-reveal
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 65);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
